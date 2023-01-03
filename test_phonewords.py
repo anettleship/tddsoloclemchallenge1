@@ -4,3 +4,8 @@ def test_phonewords_should_return_empty_list_when_given_empty_list_and_blank_num
     number = ""
     wordlist = []
     assert phonewords(number, wordlist) == [] 
+
+def test_phonewords_should_return_empty_list_when_given_any_list_and_blank_number():
+    number = ""
+    wordlist = ["a"]
+    assert phonewords(number, wordlist) == []
