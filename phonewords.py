@@ -1,4 +1,7 @@
 
 def phonewords(numstring, wordlist):
 
-    return [] 
+    if len(numstring) == 0:
+        return []
+    
+    return wordlist 

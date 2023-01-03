@@ -17,3 +17,9 @@ def test_phonewords_should_return_empty_list_when_given_any_list_and_blank_numbe
 def test_phonewords_should_return_empty_list_when_given_empty_list_and_any_number(number):
     wordlist = []
     assert phonewords(number, wordlist) == [] 
+
+
+def test_phonewords_should_return_list_when_wordlist_is_single_letter_and_number_matches():
+    number = "2"
+    wordlist = ["a"]
+    assert phonewords(number, wordlist) == wordlist
