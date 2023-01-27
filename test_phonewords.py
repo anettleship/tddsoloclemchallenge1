@@ -67,6 +67,7 @@ def test_phonewords_should_return_only_matching_items_when_numstring_is_two_digi
 
 input_sample_3 = [
     ("226228", ["cat", "z", "xoom", "canabu"], ["cat", "canabu"]),
+    ("33662277", ["foo", "bar", "baz", "foobar", "emo", "cap", "car", "cat"], ["foo", "bar", "foobar", "emo", "cap", "car"])
 
 ]
 
