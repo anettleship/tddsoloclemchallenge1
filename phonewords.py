@@ -1,7 +1,7 @@
+class phonewords:
+    def list_words(self, numstring, wordlist):
 
-def phonewords(numstring, wordlist):
-
-    if len(numstring) == 0:
-        return []
-    
-    return wordlist 
+        if len(numstring) == 0:
+            return []
+        
+        return wordlist 
