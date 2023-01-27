@@ -86,7 +86,7 @@ def test_phonewords_should_return_empty_list_when_no_words_match_number():
 
 input_sample_4 = [
     ("22601228", ["cat", "z", "xoom", "canabu"], ["cat"]),
-
+    ("01101190", ["cat", "z", "xoom", "canabu"], ["z"]),
 ]
 
 @pytest.mark.parametrize("number,wordlist,expected", input_sample_4)
