@@ -22,7 +22,7 @@ class phonewords:
         number_checker.add_number(numstring)
         for word in wordlist:
             if number_checker.check_word(word):
-                result += word
+                result.append(word) 
 
         return result 
 
