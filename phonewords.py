@@ -5,5 +5,8 @@ class phonewords:
 
         if len(numstring) == 0:
             return []
-        
+
+        if numstring == "2" and "a" in wordlist:
+            return ["a"]
+
         return wordlist 

@@ -28,3 +28,10 @@ def test_phonewords_should_return_list_when_wordlist_is_single_letter_and_number
     number = "2"
     wordlist = ["a"]
     assert phonewords_maker.list_words(number, wordlist) == wordlist
+
+
+def test_phonewords_should_return_one_item_when_wordlist_contains_one_matching_and_one_not_matching_item():
+    phonewords_maker = phonewords()
+    number = "2"
+    wordlist = ["a", "d"]
+    assert phonewords_maker.list_words(number, wordlist) == ["a"] 
