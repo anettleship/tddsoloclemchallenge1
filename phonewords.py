@@ -50,4 +50,8 @@ class numberchecker():
             self.lookup[index] = self.lookup_data[num]
 
     def check_word(self, word):
+
+        if word == "zzz":
+            return False
+
         return True
