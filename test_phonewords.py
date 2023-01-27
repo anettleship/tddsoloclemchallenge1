@@ -60,6 +60,17 @@ input_sample_2 = [
 ]
 
 @pytest.mark.parametrize("number,wordlist,expected", input_sample_2)
-def test_phonewords_should_return_only_matching_items_when_numstring_is_two_digits_and_word_list_contains_words_with_some_matching_numbers(number, wordlist, expected):
+def test_phonewords_should_return_only_matching_items_when_numstring_is_two_digits_and_word_list_contains_some_words_which_match(number, wordlist, expected):
+    phonewords_maker = phonewords()
+    assert phonewords_maker.list_words(number, wordlist) == expected 
+
+
+input_sample_3 = [
+    ("226228", ["cat", "z", "xoom", "canabu"], ["cat", "canabu"]),
+
+]
+
+@pytest.mark.parametrize("number,wordlist,expected", input_sample_3)
+def test_phonewords_should_return_only_matching_items_when_numstring_is_any_digits_and_word_list_contains_some_words_which_match(number, wordlist, expected):
     phonewords_maker = phonewords()
     assert phonewords_maker.list_words(number, wordlist) == expected 
