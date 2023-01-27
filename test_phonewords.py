@@ -55,6 +55,8 @@ def test_phonewords_should_return_corresponding_items_when_numstring_is_two_digi
 
 input_sample_2 = [
     ("23", ["be", "eb"], ["be"]),
+    ("53", ["ke", "eb"], ["ke"]),
+
 ]
 
 @pytest.mark.parametrize("number,wordlist,expected", input_sample_2)
