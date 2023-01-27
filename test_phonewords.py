@@ -1,6 +1,7 @@
 import pytest
 from phonewords import phonewords
 
+
 def test_phonewords_should_return_empty_list_when_given_empty_list_and_blank_number():
     phonewords_maker = phonewords()
     number = ""
