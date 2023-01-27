@@ -44,6 +44,7 @@ class numberchecker():
         self.lookup = None
 
     def add_number(self, numstring):
+        self.numstring = numstring
         self.lookup = len(numstring)*[None]
 
         for index, num in enumerate(numstring):
@@ -51,7 +52,17 @@ class numberchecker():
 
     def check_word(self, word):
 
-        if word == "zzz":
-            return False
+        word_position = 0
+        
+        for num_position in range(len(self.numstring)):
+            if word[word_position] in self.lookup[num_position]:
+                word_position += 1
+            else:
+                word_position = 0
+                if word[word_position] in self.lookup[num_position]:
+                    word_position += 1
 
-        return True
+            if word_position == len(word):
+                return True
+
+        return False
