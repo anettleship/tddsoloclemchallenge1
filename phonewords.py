@@ -4,6 +4,7 @@ class phonewords:
     def __init__(self):
         self.lookup = {
             "2" : {"a","b","c"},
+            "3" : {"d","e","f"},
         }
         
 
@@ -17,6 +18,9 @@ class phonewords:
         for word in wordlist:
             if word in self.lookup["2"]:
                 result.append(word)
+            if len(numstring) > 1:
+                if word in self.lookup["3"]:
+                    result.append(word)
 
 
         return result 
