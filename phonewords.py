@@ -43,10 +43,12 @@ class phonewords:
                     word_position += 1
                 elif word[0] in this_lookup[num_position]:
                     word_position == 1
-                num_position += 1
                 if word_position == len(word):
                     result.append(word)
                     break
+                if numstring[num_position] == "0" or numstring[num_position] == "1":
+                    word_position = 0
+                num_position += 1
 
 
         return result 

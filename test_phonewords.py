@@ -82,3 +82,14 @@ def test_phonewords_should_return_empty_list_when_no_words_match_number():
     number = "3662277"
     wordlist = ["baz", "cat"]
     assert phonewords_maker.list_words(number, wordlist) == [] 
+
+
+input_sample_4 = [
+    ("22601228", ["cat", "z", "xoom", "canabu"], ["cat"]),
+
+]
+
+@pytest.mark.parametrize("number,wordlist,expected", input_sample_4)
+def test_phonewords_should_reject_words_which_span_zero_or_one_in_number(number, wordlist, expected):
+    phonewords_maker = phonewords()
+    assert phonewords_maker.list_words(number, wordlist) == expected 
