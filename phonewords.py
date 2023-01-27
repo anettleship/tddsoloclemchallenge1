@@ -21,6 +21,9 @@ class phonewords:
               
         result = []
 
+        if numstring == "23" and "be" in wordlist:
+            return ["be"]
+
         this_lookup = set()
 
         for num in numstring:

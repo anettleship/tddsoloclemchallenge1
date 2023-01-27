@@ -52,3 +52,12 @@ def test_phonewords_should_return_corresponding_items_when_numstring_is_two_digi
     phonewords_maker = phonewords()
     assert phonewords_maker.list_words(number, wordlist) == expected 
 
+
+input_sample_2 = [
+    ("23", ["be", "eb"], ["be"]),
+]
+
+@pytest.mark.parametrize("number,wordlist,expected", input_sample_2)
+def test_phonewords_should_return_only_matching_items_when_numstring_is_two_digits_and_word_list_contains_words_with_some_matching_numbers(number, wordlist, expected):
+    phonewords_maker = phonewords()
+    assert phonewords_maker.list_words(number, wordlist) == expected 
