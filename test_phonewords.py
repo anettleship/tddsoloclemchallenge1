@@ -41,11 +41,14 @@ def test_phonewords_should_return_one_item_when_wordlist_contains_one_matching_a
     assert phonewords_maker.list_words(number, wordlist) == expected 
 
 
-input_sample = [
+input_sample_1 = [
     ("23", ["b", "d"], ["b", "d"]),
+    ("34", ["b", "d"], ["d"]),
+    ("45", ["g", "j"], ["g", "j"]),
 ]
 
-@pytest.mark.parametrize("number,wordlist,expected", input_sample)
-def test_phonewords_should_return_both_items_when_numstring_is_two_digits_and_word_list_contains_two_items_one_matching_each_number(number, wordlist, expected):
+@pytest.mark.parametrize("number,wordlist,expected", input_sample_1)
+def test_phonewords_should_return_corresponding_items_when_numstring_is_two_digits_and_word_list_contains_two_single_letters(number, wordlist, expected):
     phonewords_maker = phonewords()
     assert phonewords_maker.list_words(number, wordlist) == expected 
+
