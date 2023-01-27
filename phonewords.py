@@ -9,15 +9,6 @@ class phonewords:
 
         result = []
 
-        if len(numstring) == 0:
-            return []
-
-        if numstring == "23" and "be" in wordlist:
-            return ["be"]
-
-        if numstring == "53" and "ke" in wordlist:
-            return ["ke"]
-
         number_checker = self.number_checker
         number_checker.add_number(numstring)
         for word in wordlist:
@@ -42,15 +33,23 @@ class numberchecker():
         }
 
         self.lookup = None
+        self.no_number = True
 
     def add_number(self, numstring):
-        self.numstring = numstring
-        self.lookup = len(numstring)*[None]
+        
+        if len(numstring) > 0:
 
-        for index, num in enumerate(numstring):
-            self.lookup[index] = self.lookup_data[num]
+            self.no_number = False
+            self.numstring = numstring
+            self.lookup = len(numstring)*[None]
+
+            for index, num in enumerate(numstring):
+                self.lookup[index] = self.lookup_data[num]
 
     def check_word(self, word):
+
+        if self.no_number == True:
+            return False
 
         word_position = 0
         
