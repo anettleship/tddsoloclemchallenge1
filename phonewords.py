@@ -21,20 +21,32 @@ class phonewords:
               
         result = []
 
+        if len(numstring) == 0:
+            return []
+
         if numstring == "23" and "be" in wordlist:
             return ["be"]
 
         if numstring == "53" and "ke" in wordlist:
             return ["ke"]
 
-        this_lookup = set()
+        this_lookup = len(numstring)*[None]
 
-        for num in numstring:
-            this_lookup.update(self.lookup[num])
+        for index, num in enumerate(numstring):
+            this_lookup[index] = self.lookup[num]
 
         for word in wordlist:
-            if word in this_lookup: 
-                result.append(word)
+            num_position = 0
+            word_position = 0
+            while num_position < len(numstring):
+                if word[word_position] in this_lookup[num_position]:
+                    word_position += 1
+                elif word[0] in this_lookup[num_position]:
+                    word_position == 1
+                num_position += 1
+                if word_position == len(word):
+                    result.append(word)
+                    break
 
 
         return result 
