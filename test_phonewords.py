@@ -32,7 +32,8 @@ def test_phonewords_should_return_list_when_wordlist_is_single_letter_and_number
 
 input_sample = [
     ("2", ["a", "d"], ["a"]),
-    ]
+    ("2", ["b", "d"], ["b"])
+]
 
 @pytest.mark.parametrize("number,wordlist,expected", input_sample)
 def test_phonewords_should_return_one_item_when_wordlist_contains_one_matching_and_one_not_matching_item(number, wordlist, expected):

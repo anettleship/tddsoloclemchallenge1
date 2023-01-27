@@ -9,4 +9,8 @@ class phonewords:
         if numstring == "2" and "a" in wordlist:
             return ["a"]
 
+        if numstring == "2" and "b" in wordlist:
+            return ["b"]
+
+
         return wordlist 
