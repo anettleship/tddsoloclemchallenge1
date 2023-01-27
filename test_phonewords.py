@@ -75,3 +75,10 @@ input_sample_3 = [
 def test_phonewords_should_return_only_matching_items_when_numstring_is_any_digits_and_word_list_contains_some_words_which_match(number, wordlist, expected):
     phonewords_maker = phonewords()
     assert phonewords_maker.list_words(number, wordlist) == expected 
+
+
+def test_phonewords_should_return_empty_list_when_no_words_match_number():
+    phonewords_maker = phonewords()
+    number = "3662277"
+    wordlist = ["baz", "cat"]
+    assert phonewords_maker.list_words(number, wordlist) == [] 
