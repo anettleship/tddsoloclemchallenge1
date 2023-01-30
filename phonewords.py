@@ -56,12 +56,14 @@ class numberchecker():
         for num_position in range(len(self.numstring)):
             if word[word_position] in self.lookup[num_position]:
                 word_position += 1
-            else:
-                word_position = 0
-                if word[word_position] in self.lookup[num_position]:
-                    word_position += 1
-
-            if word_position == len(word):
-                return True
+                if word_position == len(word):
+                    return True
+                continue
+                
+            word_position = 0
+            if word[word_position] in self.lookup[num_position]:
+                word_position += 1
+                if word_position == len(word):
+                    return True
 
         return False
